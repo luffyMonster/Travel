@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8080/TravelWebService/AccountService?wsdl" uri="wsdl/localhost_8080/TravelWebService/AccountService.wsdl"/>
     <system systemId="http://localhost:8080/TravelWebService/AccountService?xsd=1" uri="wsdl/localhost_8080/TravelWebService/AccountService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/TravelWebService/TourService?wsdl" uri="wsdl/localhost_8080/TravelWebService/TourService.wsdl"/>
+    <system systemId="http://localhost:8080/TravelWebService/TourService?xsd=1" uri="wsdl/localhost_8080/TravelWebService/TourService.xsd_1.xsd"/>
 </catalog>

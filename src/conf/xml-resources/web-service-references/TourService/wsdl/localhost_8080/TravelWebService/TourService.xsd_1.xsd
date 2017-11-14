@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://service.travel.dn.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service.travel.dn.com/">
+
+<xs:element name="createTour" type="tns:createTour" />
+
+<xs:element name="createTourResponse" type="tns:createTourResponse" />
+
+<xs:complexType name="createTour">
+<xs:sequence>
+<xs:element name="arg0" type="tns:tour" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tour">
+<xs:sequence>
+<xs:element name="endDate" type="xs:string" minOccurs="0" />
+<xs:element name="endPlace" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:long" minOccurs="0" />
+<xs:element name="image" type="xs:string" minOccurs="0" />
+<xs:element name="introduction" type="xs:string" minOccurs="0" />
+<xs:element name="name" type="xs:string" minOccurs="0" />
+<xs:element name="price" type="xs:float" />
+<xs:element name="startDate" type="xs:string" minOccurs="0" />
+<xs:element name="startPlace" type="xs:string" minOccurs="0" />
+<xs:element name="tourContent" type="xs:string" minOccurs="0" />
+<xs:element name="type" type="tns:tourType" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tourType">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0" />
+<xs:element name="name" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createTourResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

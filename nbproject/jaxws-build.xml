@@ -42,5 +42,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/dn/travel/service/account"/>
         <delete dir="${build.generated.dir}/jax-wsCache/AccountService"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-AccountService"/>
+    <target name="wsimport-client-TourService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TourService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TourService" destdir="${build.generated.dir}/jax-wsCache/TourService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TourService/wsdl/localhost_8080/TravelWebService/TourService.wsdl" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/TravelWebService/TourService?wsdl" xnocompile="true" xendorsed="true" package="com.dn.travel.service.tour">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TourService/wsdl/localhost_8080/TravelWebService/TourService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TourService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TourService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TourService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/dn/travel/service/tour"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/TourService"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-AccountService, wsimport-client-TourService"/>
 </project>

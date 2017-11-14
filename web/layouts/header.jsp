@@ -39,29 +39,24 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#" class="navbar-brand offset-right-large" title="Bootstrap UI">Bootstrap UI</a>
+                    <a href="#" class="navbar-brand offset-right-large" title="Bootstrap UI">Travel</a>
                 </div>
                 <!-- Collapsible menu -->
                 <div class="collapse navbar-collapse" id="kssMenu">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Dashboard</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li><a href="#">Media</a></li>
-                        <li><a href="#">Users</a></li>
+                    <ul class="navbar-nav nav">
+                        <% if (user != null && user.getRole().equals("ADMIN")) { %>
+                        <li class="active"> <a href="<c:url value="/pages/admin/createTour.jsp"/>" >Create tour</a></li>
+                            <% } %>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-icon">
-                            <a href="#" target="_blank" title="Open site in a new tab">
+                            <a href="<c:url value="/" />" target="_blank" title="Open site in a new tab">
                                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                                 <span class="visible-xs">Home</span>
                             </a>
                         </li>
-                        <li class="navbar-icon">
-                            <a href="#" title="Settings">
-                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                                <span class="visible-xs">Settings</span>
-                            </a>
-                        </li>
+
+
                         <li class="dropdown">
                             <% if (user != null) { %>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="My profile">

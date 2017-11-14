@@ -10,4 +10,6 @@
     <system systemId="http://localhost:8080/TravelWebService/TravelAppService?xsd=1" uri="src/conf/xml-resources/web-service-references/TravelAppService/wsdl/localhost_8080/TravelWebService/TravelAppService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/TravelWebService/AccountService?wsdl" uri="src/conf/xml-resources/web-service-references/AccountService/wsdl/localhost_8080/TravelWebService/AccountService.wsdl"/>
     <system systemId="http://localhost:8080/TravelWebService/AccountService?xsd=1" uri="src/conf/xml-resources/web-service-references/AccountService/wsdl/localhost_8080/TravelWebService/AccountService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/TravelWebService/TourService?wsdl" uri="src/conf/xml-resources/web-service-references/TourService/wsdl/localhost_8080/TravelWebService/TourService.wsdl"/>
+    <system systemId="http://localhost:8080/TravelWebService/TourService?xsd=1" uri="src/conf/xml-resources/web-service-references/TourService/wsdl/localhost_8080/TravelWebService/TourService.xsd_1.xsd"/>
 </catalog>
