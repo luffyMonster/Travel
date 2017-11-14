@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/TravelWebService/Register?wsdl" uri="src/conf/xml-resources/web-service-references/Register_2/wsdl/localhost_8080/TravelWebService/Register.wsdl"/>
+    <system systemId="http://localhost:8080/TravelWebService/Register?xsd=1" uri="src/conf/xml-resources/web-service-references/Register_2/wsdl/localhost_8080/TravelWebService/Register.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/TravelWebService/Login?wsdl" uri="src/conf/xml-resources/web-service-references/Login/wsdl/localhost_8080/TravelWebService/Login.wsdl"/>
+    <system systemId="http://localhost:8080/TravelWebService/Login?xsd=1" uri="src/conf/xml-resources/web-service-references/Login/wsdl/localhost_8080/TravelWebService/Login.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/TravelWebService/UserService?wsdl" uri="src/conf/xml-resources/web-service-references/UserService/wsdl/localhost_8080/TravelWebService/UserService.wsdl"/>
+    <system systemId="http://localhost:8080/TravelWebService/UserService?xsd=1" uri="src/conf/xml-resources/web-service-references/UserService/wsdl/localhost_8080/TravelWebService/UserService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/TravelWebService/TravelAppService?wsdl" uri="src/conf/xml-resources/web-service-references/TravelAppService/wsdl/localhost_8080/TravelWebService/TravelAppService.wsdl"/>
+    <system systemId="http://localhost:8080/TravelWebService/TravelAppService?xsd=1" uri="src/conf/xml-resources/web-service-references/TravelAppService/wsdl/localhost_8080/TravelWebService/TravelAppService.xsd_1.xsd"/>
+</catalog>
