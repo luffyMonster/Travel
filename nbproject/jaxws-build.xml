@@ -26,37 +26,21 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-UserService" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/UserService"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/UserService" destdir="${build.generated.dir}/jax-wsCache/UserService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/UserService/wsdl/localhost_8080/TravelWebService/UserService.wsdl" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/TravelWebService/UserService?wsdl" xnocompile="true" xendorsed="true" package="com.dn.travel.service">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/UserService/wsdl/localhost_8080/TravelWebService/UserService.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/UserService"/>
+    <target name="wsimport-client-AccountService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AccountService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AccountService" destdir="${build.generated.dir}/jax-wsCache/AccountService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/AccountService/wsdl/localhost_8080/TravelWebService/AccountService.wsdl" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/TravelWebService/AccountService?wsdl" xnocompile="true" xendorsed="true" package="com.dn.travel.service.account">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/AccountService/wsdl/localhost_8080/TravelWebService/AccountService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AccountService"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/UserService">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AccountService">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-UserService" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/dn/travel/service"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/UserService"/>
+    <target name="wsimport-client-clean-AccountService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/dn/travel/service/account"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/AccountService"/>
     </target>
-    <target name="wsimport-client-TravelAppService" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/TravelAppService"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TravelAppService" destdir="${build.generated.dir}/jax-wsCache/TravelAppService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TravelAppService/wsdl/localhost_8080/TravelWebService/TravelAppService.wsdl" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/TravelWebService/TravelAppService?wsdl" xnocompile="true" xendorsed="true" package="com.dn.travel.service">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TravelAppService/wsdl/localhost_8080/TravelWebService/TravelAppService.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/TravelAppService"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/TravelAppService">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-TravelAppService" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/dn/travel/service"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/TravelAppService"/>
-    </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-UserService, wsimport-client-TravelAppService"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-AccountService"/>
 </project>

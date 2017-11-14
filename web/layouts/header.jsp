@@ -4,7 +4,12 @@
     Author     : ict-sv-nghiatd
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" import="com.dn.travel.service.account.User"%>
+
+
+<%
+    User user = (User)session.getAttribute("user");
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -58,13 +63,43 @@
                             </a>
                         </li>
                         <li class="dropdown">
+                            <% if (user != null) { %>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="My profile">
                                 <span class="glyphicon glyphicon-user offset-right" aria-hidden="true"></span>
                                 <span class="visible-xs-inline offset-right">My Profile</span>
                                 <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="dropdown-header">Tài khoản</li>
+                                <li class="dropdown-header"><%=user.getName()%></li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="<c:url value="/pages/account/userInfo.jsp" />">
+                                        <span class="glyphicon glyphicon-user offset-right icon-shift-down" aria-hidden="true"></span>
+                                        Thông tin tài khoản
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<c:url value="/pages/account/editUser.jsp" />">
+                                        <span class="glyphicon glyphicon-edit offset-right icon-shift-down" aria-hidden="true"></span>
+                                        Cập nhật thông tin
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<c:url value="/pages/account/doLogout.jsp" />">
+                                        <span class="glyphicon glyphicon-off offset-right icon-shift-down" aria-hidden="true"></span>
+                                        Đăng xuất
+                                    </a>
+                                </li>
+                            </ul>
+                            <% }%>
+                            <% if (user == null) { %>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Tài khoản">
+                                <span class="glyphicon glyphicon-th offset-right" aria-hidden="true"></span>
+                                <span class="visible-xs-inline offset-right">Tài khoản</span>
+                                <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header"></li>
                                 <li class="divider"></li>
                                 <li>
                                     <a href="<c:url value="/pages/account/login.jsp" />">
@@ -79,6 +114,7 @@
                                     </a>
                                 </li>
                             </ul>
+                            <% }%>
                         </li><!-- .dropdown -->
                     </ul><!-- .nav -->
                 </div><!-- .collapsible -->
